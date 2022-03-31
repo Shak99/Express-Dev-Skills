@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills</title>
+  </head>
+  <body>
+    <h1>Skills</h1>
+    <a href="/skills/new">Create Skill</a>
+    <ul>
+      <% skills.forEach(function(t) { %>
+      <a href="/skills/<%=t.id%>"><li><%= t.skill %> - <%= t.have ? 'have' : 'do not have' %></li></a>
+      
+      <li><form action="/todos/<%= t.id %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">Delete <%=t.skill%></button>
+      </form></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
