@@ -13,7 +13,7 @@
       <% skills.forEach(function(t) { %>
       <a href="/skills/<%=t.id%>"><li><%= t.skill %> - <%= t.have ? 'have' : 'do not have' %></li></a>
       
-      <li><form action="/todos/<%= t.id %>?_method=DELETE"
+      <li><form action="/skills/<%= t.id %>?_method=DELETE"
         class="delete-form" method="POST">
         <button type="submit">Delete <%=t.skill%></button>
       </form></li>
